@@ -1,0 +1,26 @@
+{
+    "name":"Angelo Gabriel",
+    "job":"Estudante",
+    "github":"AngeloGbiel",
+    "playlist":{
+        "jogos":[
+            {
+                "title":"Algum video",
+                "url":"url",
+                "thumb":"thumbnail"
+            },
+            {
+                "title":"video 2",
+                "url":"url",
+                "thumb":"thumbnail"
+            }
+        ],
+        "front-end":[
+            {
+                "title":"Algum video",
+                "url":"url",
+                "thumb":"thumbnail"
+            }
+        ]
+    }
+}   
