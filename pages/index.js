@@ -1,9 +1,13 @@
 import config from '../config.json'
+import React from 'react';
 import styled from "styled-components";
 import Menu from "../src/components/Menu"
 import { CSSReset } from '../src/components/CSSreset';
 import { StyledTimeline } from "../src/components/Timeline";
+
 function HomePage() {
+    const [valorDoFiltro, setValorDoFiltro] = React.useState('Fr')
+    // const valorDoFiltro = "Frost";
     return (
         <>
             <CSSReset />
@@ -12,9 +16,13 @@ function HomePage() {
                 flexDirection: "column",
                 flex: 1,
             }}>
-                <Menu />
+                <Menu
+                    valorDoFiltro={valorDoFiltro}
+                    setValorDoFiltro={setValorDoFiltro}
+                />
                 <Header />
                 <Timeline
+                    searchValue={valorDoFiltro}
                     playlist={config.playlist}
                 />
             </div>
@@ -37,7 +45,7 @@ const StyledHeader = styled.div`
         border-radius: 50%;
     }
     .user-info{
-        margin-top: 50px;
+       // margin-top: 50px;
         display: flex;
         align-items: center;
         width: 100%;
@@ -45,10 +53,15 @@ const StyledHeader = styled.div`
         gap: 16px;
     }
 `;
+const StyledBanner = styled.div`
+    background-image: url(${({bg})=>bg});
+    height: 230px;
+    background-size: cover;
+`
 function Header() {
     return (
         <StyledHeader>
-            {/* <img src='logo'/> */}
+            <StyledBanner bg={config.bg}/>
             <section className='user-info'>
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
@@ -59,19 +72,23 @@ function Header() {
         </StyledHeader>
     );
 }
-function Timeline(props) {
+function Timeline({searchValue, ...props}) {
     const playlistNames = Object.keys(props.playlist)
     return (
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = props.playlist[playlistName]
                 return (
-                    <section>
+                    <section key={playlistName}>
                         <h2>{playlistName}</h2>
                         <div>
-                            {videos.map((video) => {
+                            {videos.filter((video)=>{
+                                const titleNormalized = video.title.toLowerCase()
+                                const searchValueNormalized = searchValue.toLowerCase()
+                                return titleNormalized.includes(searchValueNormalized)
+                            }).map((video) => {
                                 return (
-                                    <a href={video.url}>
+                                    <a key={video.url} href={video.url}>
                                         <img src={video.thumb} />
                                         <span>
                                             {video.title}
