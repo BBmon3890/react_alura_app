@@ -2,15 +2,12 @@ import config from '../config.json'
 import React from 'react';
 import styled from "styled-components";
 import Menu from "../src/components/Menu"
-import { CSSReset } from '../src/components/CSSreset';
 import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-    const [valorDoFiltro, setValorDoFiltro] = React.useState('Fr')
-    // const valorDoFiltro = "Frost";
+    const [valorDoFiltro, setValorDoFiltro] = React.useState('')
     return (
         <>
-            <CSSReset />
             <div style={{
                 display: "flex",
                 flexDirection: "column",
@@ -39,6 +36,7 @@ export default HomePage;
 // }
 
 const StyledHeader = styled.div`
+    background-color: ${({ theme }) => theme.backgroundLevel1};
     img{
         width:80px;
         height: 80px;
