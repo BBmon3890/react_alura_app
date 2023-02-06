@@ -48,7 +48,7 @@ export default function RegisterVideo() {
                 ? (
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
-                        // console.log(formCadastro.values);
+                        // consgitole.log(formCadastro.values);
 
                         setFormVisivel(false);
                         formCadastro.clearForm();
