@@ -1,23 +1,23 @@
 {
-    "name":"Angelo Gabriel",
+    "name":"Marcela Barcelos",
     "job":"Estudante",
-    "github":"AngeloGbiel",
+    "github":"BBmon3890",
     "playlist":{
         "jogos":[
             {
-                "title":"Algum video",
+                "title":"um video",
                 "url":"url",
                 "thumb":"thumbnail"
             },
             {
-                "title":"video 2",
+                "title":"2 video",
                 "url":"url",
                 "thumb":"thumbnail"
             }
         ],
         "front-end":[
             {
-                "title":"Algum video",
+                "title":"mais video",
                 "url":"url",
                 "thumb":"thumbnail"
             }
