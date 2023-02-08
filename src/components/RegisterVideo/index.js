@@ -2,16 +2,12 @@ import React from "react";
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from '@supabase/supabase-js'
 
-
-// Whiteboarding
-// Custom Hook
 function useForm(propsDoForm) {
     const [values, setValues] = React.useState(propsDoForm.initialValues);
 
     return {
         values,
         handleChange: (evento) => {
-            // console.log(evento.target);
             const value = evento.target.value;
             const name = evento.target.name
             setValues({
@@ -49,8 +45,6 @@ export default function RegisterVideo() {
                 ? (
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
-                        // consgitole.log(formCadastro.values);
-
                         supabase.from("video").insert({
                             title:formCadastro.values.titulo,
                             url:formCadastro.values.url,
