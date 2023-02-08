@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const StyledRegisterVideo = styled.div`
   .add-video {
     width: 50px;
