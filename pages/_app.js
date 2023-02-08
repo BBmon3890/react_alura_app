@@ -4,6 +4,7 @@ import { CSSReset } from "../src/components/CSSreset";
 import ColorModeProvider, { ColorModeContext } from '../src/components/Menu/components/ColorMode';
 import RegisterVideo from "../src/components/RegisterVideo";
 
+
 const theme = {
     light: {
         backgroundBase: "#f9f9f9",
@@ -20,7 +21,6 @@ const theme = {
         textColorBase: "#FFFFFF",
     }
 };
-
 function ProviderWrapper(props) {
     return (
         <ColorModeProvider initiolMode={"light"}>
