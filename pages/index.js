@@ -8,7 +8,7 @@ import { videoService } from '../src/services/videoService';
 function HomePage() {
     const services = videoService()
     const [valorDoFiltro, setValorDoFiltro] = React.useState('')
-    const [playlists, setPlaylists] = React.useState({ jogos: [] });     // config.playlists
+    const [playlists, setPlaylists] = React.useState({ jogos: [] });     
 
     console.log(videoService().getAllVideos());
     React.useEffect(() => {
@@ -56,12 +56,6 @@ function HomePage() {
 
 export default HomePage;
 
-// function Menu() {
-//     return (
-//         <div>Menu</div>
-//     );
-// }
-
 const StyledHeader = styled.div`
     background-color: ${({ theme }) => theme.backgroundLevel1};
     img{
@@ -70,7 +64,6 @@ const StyledHeader = styled.div`
         border-radius: 50%;
     }
     .user-info{
-       // margin-top: 50px;
         display: flex;
         align-items: center;
         width: 100%;
