@@ -5,8 +5,10 @@ export const ColorModeContext = React.createContext({
     toggleMode:()=>{alert("cu2")}
 });
 
+
 export default function ColorModeProvider(props){
     const [mode,setMode] = useState(props.initiolMode);
+    
     
     
     function toggleMode(){
